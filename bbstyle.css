@@ -1,0 +1,196 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background: url('newbg.png') no-repeat center center fixed;
+    background-size: cover;
+    text-align: center;
+    padding: 50px;
+}
+
+/* Container */
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+}
+
+/* Login Box */
+.login-box {
+    width: 100%; /* Make the login box width responsive */
+    max-width: 350px; /* Add a maximum width */
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Input Fields */
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Include padding in the width calculation */
+}
+
+/* Button */
+button {
+    width: 100%; /* Full width for the button */
+    padding: 10px;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-sizing: border-box; /* Include padding in the width calculation */
+}
+
+button:hover {
+    background: #218838;
+}
+
+/* Error Message */
+#error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: center; /* Center the error message */
+}
+
+/* Responsive Design for Mobile and Tablets */
+@media only screen and (max-width: 768px) {
+    .login-box {
+        width: 90%; /* Make the login box take 90% of the screen width on tablets and mobile */
+    }
+
+    input {
+        font-size: 14px; /* Slightly smaller font for input fields on mobile */
+    }
+
+    button {
+        padding: 12px; /* Slightly larger button padding on smaller screens */
+    }
+}
+
+/* Responsive Design for Small Mobile Screens */
+@media only screen and (max-width: 480px) {
+    .login-box {
+        width: 80%; /* Take up more space on very small screens */
+    }
+
+    input {
+        font-size: 14px;
+    }
+
+    button {
+        padding: 14px; /* Increase padding on small screens for a better tap area */
+    }
+}
+
+
+
+/* Styling h1 */
+.dashboard-container h1 {
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Paragraph Styling */
+.dashboard-container p {
+    font-family: American Typewriter, serif;
+    text-align: center, justify; /* This will justify the text */
+}
+
+/* Slideshow Container */
+.slideshow-container {
+    position: relative;
+    max-width: 90%;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Slideshow Images */
+.slide {
+    width: 100%;
+    display: none;
+}
+
+.slide img {
+    width: 90%;
+    border-radius: 10px;
+}
+
+/* Show first slide initially */
+.slide:first-child {
+    display: block;
+}
+
+/* Button */
+button {
+    width: 20%;
+    padding: 10px;
+    background: #ff5733;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background: #c70039;
+}
+
+/* Responsive Design for Mobile and Tablets */
+@media only screen and (max-width: 768px) {
+    h1 {
+        font-size: 28px; /* Slightly smaller font for mobile */
+    }
+
+    p {
+        font-size: 16px; /* Make text size responsive */
+        padding: 0 10px;
+    }
+
+    /* Adjust slideshow image size for mobile */
+    .slide img {
+        width: 80%; /* Smaller images on mobile */
+    }
+
+    /* Make button responsive */
+    button {
+        width: 50%;
+        padding: 12px;
+    }
+}
+
+/* Responsive Design for Small Mobile Screens */
+@media only screen and (max-width: 480px) {
+    h1 {
+        font-size: 24px; /* Smaller font size on small screens */
+    }
+
+    p {
+        font-size: 14px; /* Adjust text size for readability */
+    }
+
+    /* Make slideshow image take full width */
+    .slide img {
+        width: 100%;
+    }
+
+    /* Make button larger on small screens */
+    button {
+        width: 80%;
+        padding: 15px;
+    }
+}

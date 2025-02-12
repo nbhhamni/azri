@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Baby!</title>
+    <link rel="stylesheet" href="bbstyle.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <h1>🎉 Happy Birthday, <span id="username"></span>! 🎂</h1>
+        <p>"Happy Birthday, babyy! 💖🎉 On this special day, I just want to remind you how incredibly amazing you are. 
+        You bring so much joy, love, and warmth into my life, and I’m beyond grateful to have you by my side.
+        May this year bring you endless happiness, success, and all the beautiful things you deserve. 
+        I hope today is filled with love, laughter, and unforgettable moments just like the ones you give me every single day.
+        No matter where life takes us, I promise to always be here, cheering you on and loving you with all my heart. 
+        Enjoy your day, my love! You mean the world to me.</p>
+		
+		<audio id="bg-music" loop>
+        <source src="rahsiatuhan.mp3" type="audio/mpeg">
+        Your browser does not support the audio tag.
+		</audio>
+		
+		<button id="music-btn" onclick="toggleMusic()">🎵 Play Music</button>
+
+        
+        <!-- Slideshow Gallery -->
+        <div class="slideshow-container">
+            <div class="slide fade">
+                <img src="img1.jpg" alt="Birthday Image 1">
+            </div>
+            <div class="slide fade">
+                <img src="img2.jpg" alt="Birthday Image 2">
+            </div>
+            <div class="slide fade">
+                <img src="img3.jpg" alt="Birthday Image 3">
+            </div>
+            <div class="slide fade">
+                <img src="img4.jpg" alt="Birthday Image 4">
+            </div>
+            <div class="slide fade">
+                <img src="img5.jpg" alt="Birthday Image 5">
+            </div>
+        </div>
+
+        <button onclick="logout()">Log Out</button>
+    </div>
+
+    <script>
+        // Get username from session storage
+        let username = sessionStorage.getItem("loggedInUser");
+        if (username) {
+            document.getElementById("username").textContent = username;
+        } else {
+            // Redirect back to login page if no user is logged in
+            window.location.href = "index.html";
+        }
+
+        // Auto-slideshow script
+        let slideIndex = 0;
+        function showSlides() {
+            let slides = document.querySelectorAll(".slide");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 3000); // Change slide every 3 seconds
+        }
+
+        function changeSlide(n) {
+            slideIndex += n;
+            let slides = document.querySelectorAll(".slide");
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+            if (slideIndex < 1) {
+                slideIndex = slides.length;
+            }
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex - 1].style.display = "block";
+        }
+
+        // Start slideshow when page loads
+        showSlides();
+
+        // Logout function
+        function logout() {
+    sessionStorage.removeItem("loggedInUser"); // Clear user session
+    window.location.href = "logout.html"; // Redirect to logout page
+}
+
+		
+		// 🎵 Music Control Function
+    let music = document.getElementById("bg-music");
+
+    function toggleMusic() {
+        if (music.paused) {
+            music.play();
+            document.getElementById("music-btn").textContent = "⏸ Pause Music";
+        } else {
+            music.pause();
+            document.getElementById("music-btn").textContent = "🎵 Play Music";
+        }
+    }
+
+    // ✅ Automatically play music when page loads
+    window.onload = function () {
+        music.play();
+    };
+    </script>
+</body>
+</html>
